@@ -4,6 +4,21 @@ Famus Sport Tour
 Whtat's Famus Sport Tour
 ---
 
+An application that gives tourists suggestions on where to go in Vancouver.
+
+For who?
+---
+
+Tourists
+International students
+
+What's solving?
+---
+
+Suggest places to go if you are not sure where to go.
+Offer a lesser known place to go.
+To some extent, you have narrowed down your choices.
+
 Dependency
 ---
 
