@@ -13,6 +13,8 @@
 		048BC50D25B65E2300C6E785 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC50C25B65E2300C6E785 /* TopViewController.swift */; };
 		048BC51125B65E7C00C6E785 /* TopVCCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC51025B65E7C00C6E785 /* TopVCCategory.swift */; };
 		21B735D6FC6D44565639BF4E /* Pods_FamousSpotTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA4F1E7CBDF4B7A68F7D1AB /* Pods_FamousSpotTour.framework */; };
+		3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */; };
+		3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */; };
 		3BF1117525B11392003BD6E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1117425B11392003BD6E7 /* AppDelegate.swift */; };
 		3BF1117725B11392003BD6E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1117625B11392003BD6E7 /* SceneDelegate.swift */; };
 		3BF1117925B11392003BD6E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1117825B11392003BD6E7 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsRepository.swift; sourceTree = "<group>"; };
 		048BC50425B65DD900C6E785 /* HorizontalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		048BC50525B65DD900C6E785 /* UIView+ConstraintLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintLayout.swift"; sourceTree = "<group>"; };
 		048BC50625B65DD900C6E785 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3BA1FC2425B773AE00EEA851 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		3BF1116825B11392003BD6E7 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 		3BF1117325B11392003BD6E7 /* FamousSpotTour */ = {
 			isa = PBXGroup;
 			children = (
+				3BA1FC2425B773AE00EEA851 /* Repositories */,
 				048BC50B25B65DDE00C6E785 /* Utils */,
 				3BF1117425B11392003BD6E7 /* AppDelegate.swift */,
 				3BF1117625B11392003BD6E7 /* SceneDelegate.swift */,
@@ -107,6 +120,7 @@
 				3BF1117D25B11397003BD6E7 /* Assets.xcassets */,
 				3BF1117F25B11397003BD6E7 /* LaunchScreen.storyboard */,
 				3BF1118225B11397003BD6E7 /* Info.plist */,
+				3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */,
 			);
 			path = FamousSpotTour;
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 			files = (
 				3BF1118125B11397003BD6E7 /* LaunchScreen.storyboard in Resources */,
 				3BF1117E25B11397003BD6E7 /* Assets.xcassets in Resources */,
+				3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +241,7 @@
 			files = (
 				048BC51125B65E7C00C6E785 /* TopVCCategory.swift in Sources */,
 				3BF1117925B11392003BD6E7 /* ViewController.swift in Sources */,
+				3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */,
 				048BC50925B65DD900C6E785 /* VerticalStackView.swift in Sources */,
 				3BF1117525B11392003BD6E7 /* AppDelegate.swift in Sources */,
 				3BF1117725B11392003BD6E7 /* SceneDelegate.swift in Sources */,
@@ -378,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.i-nasu.FamousSpotTour";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FamousSpotTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -398,7 +414,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.i-nasu.FamousSpotTour";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FamousSpotTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
