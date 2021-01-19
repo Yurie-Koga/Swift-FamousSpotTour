@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		21B735D6FC6D44565639BF4E /* Pods_FamousSpotTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA4F1E7CBDF4B7A68F7D1AB /* Pods_FamousSpotTour.framework */; };
+		3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */; };
+		3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */; };
 		3BF1117525B11392003BD6E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1117425B11392003BD6E7 /* AppDelegate.swift */; };
 		3BF1117725B11392003BD6E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1117625B11392003BD6E7 /* SceneDelegate.swift */; };
 		3BF1117925B11392003BD6E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1117825B11392003BD6E7 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsRepository.swift; sourceTree = "<group>"; };
 		3BF1117125B11392003BD6E7 /* FamousSpotTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamousSpotTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF1117425B11392003BD6E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BF1117625B11392003BD6E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,8 +58,15 @@
 				B82C74E8A70F2F31696D99DA /* Pods-FamousSpotTour.debug.xcconfig */,
 				F8ED82F513C697CEB7106949 /* Pods-FamousSpotTour.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3BA1FC2425B773AE00EEA851 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		3BF1116825B11392003BD6E7 = {
@@ -79,12 +90,14 @@
 		3BF1117325B11392003BD6E7 /* FamousSpotTour */ = {
 			isa = PBXGroup;
 			children = (
+				3BA1FC2425B773AE00EEA851 /* Repositories */,
 				3BF1117425B11392003BD6E7 /* AppDelegate.swift */,
 				3BF1117625B11392003BD6E7 /* SceneDelegate.swift */,
 				3BF1117825B11392003BD6E7 /* ViewController.swift */,
 				3BF1117D25B11397003BD6E7 /* Assets.xcassets */,
 				3BF1117F25B11397003BD6E7 /* LaunchScreen.storyboard */,
 				3BF1118225B11397003BD6E7 /* Info.plist */,
+				3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */,
 			);
 			path = FamousSpotTour;
 			sourceTree = "<group>";
@@ -150,6 +163,7 @@
 			files = (
 				3BF1118125B11397003BD6E7 /* LaunchScreen.storyboard in Resources */,
 				3BF1117E25B11397003BD6E7 /* Assets.xcassets in Resources */,
+				3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BF1117925B11392003BD6E7 /* ViewController.swift in Sources */,
+				3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */,
 				3BF1117525B11392003BD6E7 /* AppDelegate.swift in Sources */,
 				3BF1117725B11392003BD6E7 /* SceneDelegate.swift in Sources */,
 			);
@@ -351,7 +366,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.i-nasu.FamousSpotTour";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FamousSpotTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -371,7 +386,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.i-nasu.FamousSpotTour";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FamousSpotTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
