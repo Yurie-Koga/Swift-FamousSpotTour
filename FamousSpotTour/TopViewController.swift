@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 // to pass which image tapped
 class ImageTapGesture: UITapGestureRecognizer {
@@ -64,11 +65,11 @@ class TopViewController: UIViewController {
         
         noteV.matchParent(padding: .init(top: 0, left: 100, bottom: 0, right: 0))
         noteV.addSubview(noteLabel)
-        NSLayoutConstraint.activate([
-            noteLabel.centerXAnchor.constraint(equalTo: noteV.centerXAnchor),
-            noteLabel.centerYAnchor.constraint(equalTo: noteV.centerYAnchor),
-            noteLabel.widthAnchor.constraint(equalTo: noteV.widthAnchor, constant: -20),
-        ])
+        noteLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(noteV.snp.centerX)
+            make.centerY.equalTo(noteV.snp.centerY)
+            make.width.equalTo(noteV.snp.width).offset(-20)
+        }
         
         // default display
         noteV.backgroundColor = categories[0].color
