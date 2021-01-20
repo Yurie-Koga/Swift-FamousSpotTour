@@ -12,6 +12,9 @@
 		048BC50925B65DD900C6E785 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC50625B65DD900C6E785 /* VerticalStackView.swift */; };
 		048BC50D25B65E2300C6E785 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC50C25B65E2300C6E785 /* TopViewController.swift */; };
 		048BC51125B65E7C00C6E785 /* TopVCCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC51025B65E7C00C6E785 /* TopVCCategory.swift */; };
+		14B49FD225B7ABF4005408CD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B49FD025B7ABF4005408CD /* MapViewController.swift */; };
+		14B49FD325B7ABF4005408CD /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B49FD125B7ABF4005408CD /* Locations.swift */; };
+		14B49FD625B7AF70005408CD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B49FD525B7AF70005408CD /* MainTabBarController.swift */; };
 		21B735D6FC6D44565639BF4E /* Pods_FamousSpotTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA4F1E7CBDF4B7A68F7D1AB /* Pods_FamousSpotTour.framework */; };
 		3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */; };
 		3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */; };
@@ -23,13 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsRepository.swift; sourceTree = "<group>"; };
 		048BC50425B65DD900C6E785 /* HorizontalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		048BC50525B65DD900C6E785 /* UIView+ConstraintLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintLayout.swift"; sourceTree = "<group>"; };
 		048BC50625B65DD900C6E785 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		048BC50C25B65E2300C6E785 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		048BC51025B65E7C00C6E785 /* TopVCCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVCCategory.swift; sourceTree = "<group>"; };
+		14B49FD025B7ABF4005408CD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		14B49FD125B7ABF4005408CD /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		14B49FD525B7AF70005408CD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsRepository.swift; sourceTree = "<group>"; };
 		3BF1117125B11392003BD6E7 /* FamousSpotTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamousSpotTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF1117425B11392003BD6E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BF1117625B11392003BD6E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,8 +120,11 @@
 				048BC50B25B65DDE00C6E785 /* Utils */,
 				3BF1117425B11392003BD6E7 /* AppDelegate.swift */,
 				3BF1117625B11392003BD6E7 /* SceneDelegate.swift */,
+				14B49FD525B7AF70005408CD /* MainTabBarController.swift */,
 				048BC50C25B65E2300C6E785 /* TopViewController.swift */,
 				048BC51025B65E7C00C6E785 /* TopVCCategory.swift */,
+				14B49FD125B7ABF4005408CD /* Locations.swift */,
+				14B49FD025B7ABF4005408CD /* MapViewController.swift */,
 				3BF1117825B11392003BD6E7 /* ViewController.swift */,
 				3BF1117D25B11397003BD6E7 /* Assets.xcassets */,
 				3BF1117F25B11397003BD6E7 /* LaunchScreen.storyboard */,
@@ -241,12 +250,15 @@
 			files = (
 				048BC51125B65E7C00C6E785 /* TopVCCategory.swift in Sources */,
 				3BF1117925B11392003BD6E7 /* ViewController.swift in Sources */,
+				14B49FD625B7AF70005408CD /* MainTabBarController.swift in Sources */,
 				3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */,
+				14B49FD225B7ABF4005408CD /* MapViewController.swift in Sources */,
 				048BC50925B65DD900C6E785 /* VerticalStackView.swift in Sources */,
 				3BF1117525B11392003BD6E7 /* AppDelegate.swift in Sources */,
 				3BF1117725B11392003BD6E7 /* SceneDelegate.swift in Sources */,
 				048BC50725B65DD900C6E785 /* HorizontalStackView.swift in Sources */,
 				048BC50825B65DD900C6E785 /* UIView+ConstraintLayout.swift in Sources */,
+				14B49FD325B7ABF4005408CD /* Locations.swift in Sources */,
 				048BC50D25B65E2300C6E785 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

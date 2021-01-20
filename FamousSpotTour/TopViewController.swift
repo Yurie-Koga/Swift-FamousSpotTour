@@ -110,8 +110,9 @@ class TopViewController: UIViewController {
     // move to map
     @objc func goTour() {
         print("move to map")
-//        let mapVC = MapViewController()
-//        navigationController?.pushViewController(mapVC, animated: true)
+        let mainTBC = MainTabBarController()
+        mainTBC.navigationController?.navigationBar.isHidden = true
+        navigationController?.pushViewController(mainTBC, animated: true)
     }
 }
 
