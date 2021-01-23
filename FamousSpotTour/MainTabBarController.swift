@@ -17,10 +17,10 @@ class MainTabBarController: UITabBarController {
         let myPage = UIViewController()
         let settings = UIViewController()
         
-        let itens = [map,list,myPage,settings]
-        let itensVC = itens.map { createVC($0) }
+        let items = [map,list,myPage,settings]
+        let itemsVC = items.map { createVC($0) }
         
-        self.viewControllers = itensVC.map { UINavigationController(rootViewController: $0) }
+        self.viewControllers = itemsVC.map { UINavigationController(rootViewController: $0) }
         
     }
     

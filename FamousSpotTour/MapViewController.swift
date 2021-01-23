@@ -9,13 +9,17 @@ import UIKit
 import RealmSwift
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var mapView = MKMapView()
     
     let locationManager = CLLocationManager()
     
-    lazy var locations: Results<Location> = { self.realm.objects(Location.self) }()
+    var cellId = "Cell"
+    
+    var locations: [Location] = []
+    
+    var spotTab : UICollectionView!
     
     let realm = try! Realm()
     
@@ -28,34 +32,66 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocation(2)
+        
         view.backgroundColor = .white
         view.addSubview(mapView)
         mapView.frame = .init(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         mapView.delegate = self
         
+        
+        let spotBarWidth = view.bounds.width - 20
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: spotBarWidth / 4, height: view.bounds.height * 0.15 - 20)
+        layout.scrollDirection = .horizontal
+        spotTab = UICollectionView(frame: .init(x: 10, y: view.bounds.height - (view.bounds.height * 0.15) - (super.tabBarController!.tabBar.frame.size.height + 10), width: spotBarWidth, height: view.bounds.height * 0.15), collectionViewLayout: layout)
+        spotTab.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        spotTab.layer.cornerRadius = 10
+        spotTab.dataSource = self
+        spotTab.delegate = self
+        spotTab.register(SpotTabHorizontalCVCell.self, forCellWithReuseIdentifier: cellId)
+        spotTab.showsVerticalScrollIndicator = true
+        
+        view.addSubview(spotTab)
+        
         checkLocationServices()
-
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        populateDefaultLocations()
+        //        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        updateMap()
         
-        fetchLocationsOnMap(locations)
+        
     }
     
-    private func populateDefaultLocations() {
-        if locations.count == 0 { // 1
-            try! realm.write() { // 2
-                let defaultLocations = Location.self// 3
-                
-                for location in defaultLocations.sampleLocations { // 4
-                    realm.add(location)
-                }
-            }
-            
-            locations = realm.objects(Location.self) // 5
+    func updateMap() {
+        
+        checkLocationServices()
+        fetchLocationsOnMap(locations)
+        if(locations.count > 1) {
+            spotTab.isHidden = false
+        } else {
+            spotTab.isHidden = true
+        }
+        mapView.reloadInputViews()
+    }
+    
+    func setupLocation(_ category: Int) {
+        
+        for location in self.realm.objects(Location.self) {
+            //            if location.categoryId == category {
+            locations.append(location)
+            //            }
         }
     }
     
+    func setupLocationSelected(_ locationId: Int) {
+        locations = []
+        if let location = realm.object(ofType: Location.self, forPrimaryKey: locationId) {
+            locations.append(location)
+        }
+        spotTab.reloadData()
+        updateMap()
+    }
     
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
@@ -87,7 +123,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    func fetchLocationsOnMap(_ locations: Results<Location>) {
+    func fetchLocationsOnMap(_ locations: [Location]) {
+        mapView.removeAnnotations(mapView.annotations)
         for location in locations {
             let annotations = MKPointAnnotation()
             annotations.title = location.name
@@ -155,20 +192,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let region = MKCoordinateRegion(center: self.mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         mapView.setRegion(region, animated: true)
     }
-}
-
-
-import CommonCrypto
-
-extension String {
     
-    func sha512() -> Data? {
-        let stringData = data(using: String.Encoding.utf8)!
-        var result = Data(count: Int(CC_SHA512_DIGEST_LENGTH))
-        _ = result.withUnsafeMutableBytes { resultBytes in
-            stringData.withUnsafeBytes { stringBytes in CC_SHA512(stringBytes, CC_LONG(stringData.count), resultBytes)}
-        }
-        return result
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return locations.count
+        
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SpotTabHorizontalCVCell
+        cell.showImageView.contentMode = .scaleAspectFit
+        cell.showImageView.matchSize()
+        cell.showImageView.frame = .init(x: 0, y: 0, width: 10, height: 10)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        setupLocationSelected(locations[indexPath.row].id)
+    }
 }
