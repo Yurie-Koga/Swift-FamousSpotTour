@@ -26,6 +26,7 @@ struct SpotsRepository {
 
   // Get Specific Spots data from Firebase by id.
   func all(completeion: @escaping ([QueryDocumentSnapshot]) -> Void) {
+    
     databaseStore.collection(self.name).getDocuments{ (documents, error) in
       if let error = error {
         fatalError("\(error)")
