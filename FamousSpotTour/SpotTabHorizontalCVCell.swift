@@ -14,17 +14,19 @@ class SpotTabHorizontalCVCell: UICollectionViewCell {
         imageView.backgroundColor = UIColor.white
         imageView.image = UIImage(systemName: "photo.on.rectangle")
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleToFill
+        imageView.matchSize()
+        imageView.frame = .init(x: 0, y: 0, width: 10, height: 10)
         return imageView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(showImageView)
-        
-//        showImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+
         showImageView.centerXYin(self)
-        showImageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        showImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20).isActive = true
+        showImageView.constraintWidth(equalToConstant: self.bounds.width, heightEqualToConstant: self.bounds.width
+        )
         
     }
     

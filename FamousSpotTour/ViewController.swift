@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     }
     
     func fetchSpotFromRepository() {
-        
         self.spotsRepository.all { (items) in
             try! self.realm.write() {
                 for item in items {
@@ -34,7 +33,19 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
+    }
+    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url)
+           { (data, response, error) in
+            if let data = data,
+                let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
     }
     
     

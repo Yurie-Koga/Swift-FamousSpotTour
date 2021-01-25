@@ -9,13 +9,16 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    let map = MapViewController()
+    
+    let list = UIViewController()
+    
+    let myPage = UIViewController()
+    
+    let settings = UIViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let map = MapViewController()
-        let list = UIViewController()
-        let myPage = UIViewController()
-        let settings = UIViewController()
         
         let items = [map,list,myPage,settings]
         let itemsVC = items.map { createVC($0) }
