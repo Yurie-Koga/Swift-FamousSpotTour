@@ -177,7 +177,7 @@ class DetailsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("sent id: \(locationId)")
+        
         // load UserData
         if let savedUserDatas = UserData.loadFromFile() {
             userDatas = savedUserDatas
