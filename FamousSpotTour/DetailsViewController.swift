@@ -177,7 +177,7 @@ class DetailsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("sent id: \(locationId)")
         // load UserData
         if let savedUserDatas = UserData.loadFromFile() {
             userDatas = savedUserDatas
@@ -191,11 +191,11 @@ class DetailsViewController: UIViewController, UICollectionViewDataSource, UICol
         let spotsRepository: SpotsRepository = SpotsRepository()
         let strID = "id_" + String(describing: locationId)
         spotsRepository.find(by: strID) { (data) in
-            print(data)
+//            print("pulled data: \(data)")
             // set data with mixing actual and sample data
             let lati = (data["geo"] as! GeoPoint).latitude
             let longti = (data["geo"] as! GeoPoint).longitude
-            self.sampleLocation = location(id: data["id"] as! Int, name: data["name"] as! String,
+            self.sampleLocation = location(id: self.locationId, name: data["name"] as! String,
                                            picture: URL(string: data["picture"] as! String)!,
                                            subPictures: [
                                             URL(string: "https://firebasestorage.googleapis.com/v0/b/famousspottour.appspot.com/o/CanadaPlaceImage.jpg?alt=media&token=302b15f4-11d3-4ba1-a036-15dee85a8bb1")!,
@@ -208,7 +208,6 @@ class DetailsViewController: UIViewController, UICollectionViewDataSource, UICol
                                            description: data["description"] as! String,
                                            categories: [1, 2], tags: [2, 3],
                                            latitude: lati, longitude: longti)
-            
             self.initUI()
         }
     }
@@ -282,9 +281,8 @@ class DetailsViewController: UIViewController, UICollectionViewDataSource, UICol
         ])
         
         // resize
-        mapView.constraintWidth(equalToConstant: 300)
-        mapView.constraintHeight(equalToConstant: 300)
-        view.layoutIfNeeded()   // need to update the UI before get sizes
+        subVSV.layoutIfNeeded() // need to update the UI before get sizes
+        mapView.constraintHeight(equalToConstant: mapView.frame.size.width)
         tagView.constraintHeight(equalToConstant: tagStackView.frame.height)
         let lWidth = subVSV.frame.size.width / 2 - 30
         subPictureLayout.itemSize = CGSize(width: lWidth, height: lWidth)

@@ -233,7 +233,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        setupLocationSelected(locations[indexPath.row].id)
+//        setupLocationSelected(locations[indexPath.row].id)
         let detailVC = DetailsViewController(locationId: locations[indexPath.row].id)
         navigationController?.pushViewController(detailVC, animated: true)
     }
