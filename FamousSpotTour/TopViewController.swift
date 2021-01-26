@@ -113,6 +113,7 @@ class TopViewController: UIViewController {
     @objc func goTour() {
         
         let mainTBC = MainTabBarController()
+        mainTBC.map.setupLocation(2)
         mainTBC.navigationController?.navigationBar.isHidden = true
         navigationController?.pushViewController(mainTBC, animated: true)
     }

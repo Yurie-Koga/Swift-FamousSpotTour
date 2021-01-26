@@ -32,7 +32,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLocation(2)
         
         view.backgroundColor = .white
         view.addSubview(mapView)
@@ -43,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
         let spotBarWidth = view.bounds.width - 20
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: spotBarWidth / 4, height: view.bounds.height * 0.15 - 20)
+        layout.itemSize = CGSize(width: spotBarWidth / 4, height: view.bounds.height * 0.1 - 20)
         layout.scrollDirection = .horizontal
         spotTab = UICollectionView(frame: .init(x: 10, y: view.bounds.height - (view.bounds.height * 0.15) - (super.tabBarController!.tabBar.frame.size.height + 10), width: spotBarWidth, height: view.bounds.height * 0.15), collectionViewLayout: layout)
         spotTab.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
@@ -201,9 +200,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SpotTabHorizontalCVCell
-        cell.showImageView.contentMode = .scaleAspectFit
-        cell.showImageView.matchSize()
-        cell.showImageView.frame = .init(x: 0, y: 0, width: 10, height: 10)
+        
+        ViewController.share.fetchImage(url: URL(string: self.locations[indexPath.row].picture)!) { (image) in
+            guard let image = image else { return }
+            DispatchQueue.main.async {
+                if let currentIndexPath = self.spotTab.indexPath(for: cell), currentIndexPath != indexPath {
+                    return
+                }
+                cell.showImageView.image = image
+                cell.setNeedsLayout()
+            }
+        }
         
         return cell
     }
