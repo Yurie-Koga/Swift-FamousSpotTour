@@ -41,6 +41,15 @@ class TopViewController: UIViewController {
         return lbl
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // hide tab bar
+        tabBarController?.tabBar.isHidden = true
+        // hide back button of nav bar
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -53,7 +62,7 @@ class TopViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .white
         title = "Famous Spot Tour"
         let goTourButton = UIBarButtonItem(title: "GoTour!", style: .plain, target: self, action: #selector(goTour))
-        navigationItem.rightBarButtonItem = goTourButton
+        self.navigationItem.rightBarButtonItem = goTourButton
         
         // Category
         let imageVSV = generateVStackView()
@@ -111,10 +120,11 @@ class TopViewController: UIViewController {
     
     // move to map
     @objc func goTour() {
+        // hide top page's nav bar
+        navigationController?.navigationBar.isHidden = true
         
         let mainTBC = MainTabBarController()
         mainTBC.map.setupLocation(2)
-        mainTBC.navigationController?.navigationBar.isHidden = true
         navigationController?.pushViewController(mainTBC, animated: true)
     }
 }
