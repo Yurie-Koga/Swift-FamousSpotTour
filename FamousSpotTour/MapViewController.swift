@@ -30,6 +30,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
         return button
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // display tab bar
+        tabBarController?.tabBar.isHidden = false
+        // display nav bar
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +46,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
         mapView.frame = .init(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         mapView.delegate = self
         
+        // nav bar
+        navigationController?.navigationBar.isHidden = false
+        title = "Map"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Top Page", style: .plain, target: self, action: #selector(leftBarBtnTapped))
         
         let spotBarWidth = view.bounds.width - 20
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -60,6 +72,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
         updateMap()
         
         
+    }
+    
+    @objc func leftBarBtnTapped() {
+        let topVC = TopViewController()
+        navigationController?.pushViewController(topVC, animated: true)
     }
     
     func updateMap() {
@@ -216,7 +233,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        setupLocationSelected(locations[indexPath.row].id)
+//        setupLocationSelected(locations[indexPath.row].id)
+        let detailVC = DetailsViewController(locationId: locations[indexPath.row].id)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
