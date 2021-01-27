@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
+    // tab bar background color
+    UITabBar.appearance().barTintColor = .white
+    // nav bar background color
+    UINavigationBar.appearance().barTintColor = .white
     return true
   }
 

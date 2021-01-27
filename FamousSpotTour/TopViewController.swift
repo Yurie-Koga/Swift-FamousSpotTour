@@ -10,6 +10,7 @@ import SnapKit
 
 // to pass which image tapped
 class ImageTapGesture: UITapGestureRecognizer {
+    var selectedCategory = Int()
     var imageName = String()
     var color = UIColor()
     var note = String()
@@ -17,7 +18,7 @@ class ImageTapGesture: UITapGestureRecognizer {
 
 class TopViewController: UIViewController {
     
-    
+    var selectedCategory = Int()
     var categories: [Category] = [
         Category(imageName: "Circle Old",
                  color: UIColor(hex: "#3EC6FF")!,
@@ -41,6 +42,15 @@ class TopViewController: UIViewController {
         return lbl
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // hide tab bar
+        tabBarController?.tabBar.isHidden = true
+        // hide back button of nav bar
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -53,7 +63,7 @@ class TopViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .white
         title = "Famous Spot Tour"
         let goTourButton = UIBarButtonItem(title: "GoTour!", style: .plain, target: self, action: #selector(goTour))
-        navigationItem.rightBarButtonItem = goTourButton
+        self.navigationItem.rightBarButtonItem = goTourButton
         
         // Category
         let imageVSV = generateVStackView()
@@ -73,6 +83,7 @@ class TopViewController: UIViewController {
         }
         
         // default display
+        selectedCategory = 0
         noteV.backgroundColor = categories[0].color
         noteLabel.text = categories[0].note
     }
@@ -81,19 +92,20 @@ class TopViewController: UIViewController {
         // Images
         var imageViews = [UIImageView]()
         for i in 0..<categories.count {
-            imageViews.append(generateImageView(category: categories[i]))
+            imageViews.append(generateImageView(category: categories[i], categoryIndex: i))
         }
         let vStackView = VerticalStackView(arrangedSubviews: imageViews, spacing: 30, alignment: .fill, distribution: .fillEqually)
         return vStackView
     }
     
-    func generateImageView(category: Category) -> UIImageView {
+    func generateImageView(category: Category, categoryIndex: Int) -> UIImageView {
         let iv = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let image = UIImage(named: category.imageName);
         iv.image = image;
         iv.contentMode = .center
         // Tap gesture
         let tap = ImageTapGesture.init(target: self, action: #selector(imageTapped(_:)))
+        tap.selectedCategory = categoryIndex
         tap.imageName = category.imageName
         tap.color = category.color
         tap.note = category.note
@@ -104,17 +116,18 @@ class TopViewController: UIViewController {
     }
     
     @objc func imageTapped(_ sender:ImageTapGesture) {
-//        selectedCategory = sender.categoryCode
+        selectedCategory = sender.selectedCategory
         noteV.backgroundColor = sender.color
         noteLabel.text = sender.note
     }
     
     // move to map
     @objc func goTour() {
+        // hide top page's nav bar
+        navigationController?.navigationBar.isHidden = true
         
         let mainTBC = MainTabBarController()
-        mainTBC.map.setupLocation(2)
-        mainTBC.navigationController?.navigationBar.isHidden = true
+        mainTBC.map.setupLocation(selectedCategory)
         navigationController?.pushViewController(mainTBC, animated: true)
     }
 }
