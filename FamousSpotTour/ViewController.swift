@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     let spotsRepository: SpotsRepository = SpotsRepository()
     let store: StoreRepository = StoreRepository(name: "tags")
     
+    let spotsRepositoryNew: SpotsRepositoryNew = SpotsRepositoryNew()
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     func fetchSpotFromRepository() {
-        self.spotsRepository.all { (items) in
+        self.spotsRepositoryNew.all { (items) in
             try! self.realm.write() {
                 for item in items {
                     let newLocation = Location(item.data())
@@ -32,6 +34,20 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // fetch single record
+    func fetchSingleSpotFromRepository(by id: String) {
+        self.spotsRepositoryNew.find(by: id, completeion: { (item) in
+            try! self.realm.write() {
+                let newLocation = Location(item)
+                self.realm.add(newLocation, update: .modified)
+//                if let location = self.realm.object(ofType: Location.self, forPrimaryKey: newLocation.id) {
+//                    print("after fetched to realm: \(location)")
+//                }
+            }
+            
+        })
     }
     
     func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {

@@ -13,7 +13,7 @@ class MainTabBarController: UITabBarController {
     
     let list = UIViewController()
     
-    let myPage = UIViewController()
+    let myPage = MyPageTableViewController(style: .grouped)
     
     let settings = UIViewController()
     
@@ -34,12 +34,16 @@ class MainTabBarController: UITabBarController {
         case let v as MapViewController:
             v.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map")! , selectedImage: nil)
             return v
-        case let v as UIViewController:
-            v.tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "list.dash")! , selectedImage: nil)
+//        case let v as UIViewController:
+//            v.tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "list.dash")! , selectedImage: nil)
+//            return v
+        case let v as MyPageTableViewController:
+            v.tabBarItem = UITabBarItem(title: "My Page", image: UIImage(systemName: "person")! , selectedImage: nil)
             return v
         default:
-            
-            return UIViewController()
+            let v = UIViewController()
+            v.tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "list.dash")! , selectedImage: nil)
+            return v
         }
         
         
