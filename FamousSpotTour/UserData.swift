@@ -10,6 +10,8 @@ import Foundation
 struct UserData: Codable {
     var locationId: Int
     var isVisited: Bool
+    var isLike: Bool
+    var isDislike: Bool
     
     static var archiveURL: URL {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -17,10 +19,6 @@ struct UserData: Codable {
         print(archiveURL)
         return archiveURL
     }
-    
-    static var sampleUserData: [UserData] = [
-        UserData(locationId: 1, isVisited: false),
-    ]
     
     static func saveToFile(userDatas: [UserData]) {
         let encoder = PropertyListEncoder()

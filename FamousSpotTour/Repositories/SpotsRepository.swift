@@ -37,3 +37,22 @@ struct SpotsRepository {
     }
   }
 }
+
+/* This is temporal - start */
+struct SpotsRepositoryNew {
+
+    let name: String = "spots_new"
+    private var databaseStore: Firestore = Firestore.firestore()
+    
+    // Get Specific Spots data from Firebase by id.
+    func find(by id: String, completeion: @escaping ([String: Any]) -> Void) {
+        databaseStore.collection(self.name).document(id).getDocument{ (document, error) in
+            if let error = error {
+                fatalError("\(error)")
+            }
+            guard let data = document?.data() else { return }
+            completeion(data)
+        }
+    }
+}
+/* This is temporal - end */

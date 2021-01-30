@@ -11,7 +11,6 @@
 		048BC50825B65DD900C6E785 /* UIView+ConstraintLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC50525B65DD900C6E785 /* UIView+ConstraintLayout.swift */; };
 		048BC50925B65DD900C6E785 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC50625B65DD900C6E785 /* VerticalStackView.swift */; };
 		048BC50D25B65E2300C6E785 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC50C25B65E2300C6E785 /* TopViewController.swift */; };
-		048BC51125B65E7C00C6E785 /* TopVCCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BC51025B65E7C00C6E785 /* TopVCCategory.swift */; };
 		04BAB30825BFD7A400059855 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAB30725BFD7A400059855 /* PaddingLabel.swift */; };
 		04BAB30B25BFDBEF00059855 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAB30A25BFDBEF00059855 /* DetailsViewController.swift */; };
 		04BAB30E25BFDC2300059855 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAB30D25BFDC2300059855 /* UserData.swift */; };
@@ -38,7 +37,6 @@
 		048BC50525B65DD900C6E785 /* UIView+ConstraintLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintLayout.swift"; sourceTree = "<group>"; };
 		048BC50625B65DD900C6E785 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		048BC50C25B65E2300C6E785 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
-		048BC51025B65E7C00C6E785 /* TopVCCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVCCategory.swift; sourceTree = "<group>"; };
 		04BAB30725BFD7A400059855 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		04BAB30A25BFDBEF00059855 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		04BAB30D25BFDC2300059855 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				3BF1117825B11392003BD6E7 /* ViewController.swift */,
 				14B49FD525B7AF70005408CD /* MainTabBarController.swift */,
 				048BC50C25B65E2300C6E785 /* TopViewController.swift */,
-				048BC51025B65E7C00C6E785 /* TopVCCategory.swift */,
 				14B49FD125B7ABF4005408CD /* Locations.swift */,
 				14B49FD025B7ABF4005408CD /* MapViewController.swift */,
 				14F0D1A525BFB9F10034A30C /* MyPageTableViewController.swift */,
@@ -273,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048BC51125B65E7C00C6E785 /* TopVCCategory.swift in Sources */,
 				3BF1117925B11392003BD6E7 /* ViewController.swift in Sources */,
 				14F0D19B25BB926E0034A30C /* SpotTabHorizontalCVCell.swift in Sources */,
 				14B49FD625B7AF70005408CD /* MainTabBarController.swift in Sources */,
