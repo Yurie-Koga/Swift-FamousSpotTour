@@ -10,7 +10,7 @@ import RealmSwift
 import Firebase
 
 class ViewController: UIViewController {
-    
+
     static let share = ViewController()
     
     let spotsRepository: SpotsRepository = SpotsRepository()
