@@ -94,7 +94,7 @@ class TopViewController: UIViewController {
         }
         
         // default display
-        selectedTag = 0
+        selectedTag = 1
         noteV.backgroundColor = tags[0].color
         noteLabel.text = tags[0].note
     }
@@ -127,7 +127,7 @@ class TopViewController: UIViewController {
     }
     
     @objc func imageTapped(_ sender:ImageTapGesture) {
-        selectedTag = sender.id
+        selectedTag = tags[sender.id].id
         noteV.backgroundColor = sender.color
         noteLabel.text = sender.note
     }

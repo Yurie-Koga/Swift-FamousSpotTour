@@ -93,7 +93,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
     
     func setupLocation(_ tag: Int) {
         for location in self.realm.objects(Location.self)  {
-            if location.tagsId.contains(tag + 1) {
+            if location.tagsId.contains(tag) {
                 locations.append(location)
             }
         }
