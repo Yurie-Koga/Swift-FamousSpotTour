@@ -24,6 +24,8 @@ class Location : Object {
     @objc dynamic var like: Int = 0
     @objc dynamic var dislike: Int = 0
     @objc dynamic var picture : String = ""
+    var subPictures = List<String>()
+    var tagsId = List<Int>()
     
     @objc dynamic var createdAt: Date = Date()
     @objc dynamic var updateAt: Date = Date()
@@ -44,6 +46,12 @@ class Location : Object {
         like = location["like"] as! Int
         dislike = location["dislike"] as! Int
         picture = location["picture"] as! String
+        for pic in location["sub_pictures"] as! NSArray {
+            subPictures.append(pic as! String)
+        }
+        for tag in location["tag_ids"] as! NSArray {
+            tagsId.append(tag as! Int)
+        }
         createdAt = (location["created_at"] as! Timestamp).dateValue()
         updateAt = (location["updated_at"] as! Timestamp).dateValue()
     }

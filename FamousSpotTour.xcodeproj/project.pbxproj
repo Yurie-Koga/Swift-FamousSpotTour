@@ -20,6 +20,8 @@
 		14B49FD325B7ABF4005408CD /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B49FD125B7ABF4005408CD /* Locations.swift */; };
 		14B49FD625B7AF70005408CD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B49FD525B7AF70005408CD /* MainTabBarController.swift */; };
 		14F0D19B25BB926E0034A30C /* SpotTabHorizontalCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0D19925BB926E0034A30C /* SpotTabHorizontalCVCell.swift */; };
+		14F0D1A625BFB9F10034A30C /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0D1A525BFB9F10034A30C /* MyPageTableViewController.swift */; };
+		14F0D1A925BFBCEB0034A30C /* MyPageTVCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0D1A825BFBCEB0034A30C /* MyPageTVCells.swift */; };
 		21B735D6FC6D44565639BF4E /* Pods_FamousSpotTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA4F1E7CBDF4B7A68F7D1AB /* Pods_FamousSpotTour.framework */; };
 		3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */; };
 		3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */; };
@@ -44,6 +46,8 @@
 		14B49FD125B7ABF4005408CD /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		14B49FD525B7AF70005408CD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		14F0D19925BB926E0034A30C /* SpotTabHorizontalCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTabHorizontalCVCell.swift; sourceTree = "<group>"; };
+		14F0D1A525BFB9F10034A30C /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
+		14F0D1A825BFBCEB0034A30C /* MyPageTVCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVCells.swift; sourceTree = "<group>"; };
 		3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsRepository.swift; sourceTree = "<group>"; };
 		3BF1117125B11392003BD6E7 /* FamousSpotTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamousSpotTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,9 @@
 				048BC50C25B65E2300C6E785 /* TopViewController.swift */,
 				14B49FD125B7ABF4005408CD /* Locations.swift */,
 				14B49FD025B7ABF4005408CD /* MapViewController.swift */,
+				14F0D1A525BFB9F10034A30C /* MyPageTableViewController.swift */,
+				14F0D1A825BFBCEB0034A30C /* MyPageTVCells.swift */,
+				3BF1117825B11392003BD6E7 /* ViewController.swift */,
 				14F0D19925BB926E0034A30C /* SpotTabHorizontalCVCell.swift */,
 				04BAB30A25BFDBEF00059855 /* DetailsViewController.swift */,
 				04BAB30D25BFDC2300059855 /* UserData.swift */,
@@ -267,6 +274,7 @@
 				14F0D19B25BB926E0034A30C /* SpotTabHorizontalCVCell.swift in Sources */,
 				14B49FD625B7AF70005408CD /* MainTabBarController.swift in Sources */,
 				3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */,
+				14F0D1A625BFB9F10034A30C /* MyPageTableViewController.swift in Sources */,
 				14B49FD225B7ABF4005408CD /* MapViewController.swift in Sources */,
 				04BAB30825BFD7A400059855 /* PaddingLabel.swift in Sources */,
 				048BC50925B65DD900C6E785 /* VerticalStackView.swift in Sources */,
@@ -279,6 +287,7 @@
 				04BAB31125BFDC5200059855 /* SubPictureCollectionViewCell.swift in Sources */,
 				14B49FD325B7ABF4005408CD /* Locations.swift in Sources */,
 				144D2ED625B95318000D7C63 /* UIColor+HexaColor.swift in Sources */,
+				14F0D1A925BFBCEB0034A30C /* MyPageTVCells.swift in Sources */,
 				048BC50D25B65E2300C6E785 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

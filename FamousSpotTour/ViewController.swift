@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     let spotsRepository: SpotsRepository = SpotsRepository()
     
+    let spotsRepositoryNew: SpotsRepositoryNew = SpotsRepositoryNew()
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     func fetchSpotFromRepository() {
-        self.spotsRepository.all { (items) in
+        self.spotsRepositoryNew.all { (items) in
             try! self.realm.write() {
                 for item in items {
                     let newLocation = Location(item.data())
@@ -37,7 +39,7 @@ class ViewController: UIViewController {
     
     // fetch single record
     func fetchSingleSpotFromRepository(by id: String) {
-        self.spotsRepository.find(by: id, completeion: { (item) in
+        self.spotsRepositoryNew.find(by: id, completeion: { (item) in
             try! self.realm.write() {
                 let newLocation = Location(item)
                 self.realm.add(newLocation, update: .modified)

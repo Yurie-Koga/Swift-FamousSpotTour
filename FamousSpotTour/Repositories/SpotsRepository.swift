@@ -10,7 +10,8 @@ import FirebaseFirestore
 
 struct SpotsRepository {
 
-  let name: String = "spots"
+//  let name: String = "spots"
+    let name: String = "spots"
   private var databaseStore: Firestore = Firestore.firestore()
 
   // Get All Spots data from Firebase.
@@ -43,15 +44,27 @@ struct SpotsRepositoryNew {
     let name: String = "spots_new"
     private var databaseStore: Firestore = Firestore.firestore()
     
-    // Get Specific Spots data from Firebase by id.
+    // Get All Spots data from Firebase.
     func find(by id: String, completeion: @escaping ([String: Any]) -> Void) {
-        databaseStore.collection(self.name).document(id).getDocument{ (document, error) in
-            if let error = error {
-                fatalError("\(error)")
-            }
-            guard let data = document?.data() else { return }
-            completeion(data)
+      databaseStore.collection(self.name).document(id).getDocument{ (document, error) in
+        if let error = error {
+          fatalError("\(error)")
         }
+        guard let data = document?.data() else { return }
+        completeion(data)
+      }
+    }
+
+    // Get Specific Spots data from Firebase by id.
+    func all(completeion: @escaping ([QueryDocumentSnapshot]) -> Void) {
+      
+      databaseStore.collection(self.name).getDocuments{ (documents, error) in
+        if let error = error {
+          fatalError("\(error)")
+        }
+        guard let data = documents else { return }
+        completeion(data.documents)
+      }
     }
 }
 /* This is temporal - end */
