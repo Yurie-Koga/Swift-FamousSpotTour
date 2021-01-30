@@ -91,12 +91,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
         mapView.reloadInputViews()
     }
     
-    func setupLocation(_ category: Int) {
-        
-        for location in self.realm.objects(Location.self) {
-            //            if location.categoryId == category {
-            locations.append(location)
-            //            }
+    func setupLocation(_ tag: Int) {
+        for location in self.realm.objects(Location.self)  {
+            if location.tagsId.contains(tag + 1) {
+                locations.append(location)
+            }
         }
     }
     
@@ -233,7 +232,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        setupLocationSelected(locations[indexPath.row].id)
+        //        setupLocationSelected(locations[indexPath.row].id)
         let detailVC = DetailsViewController(locationId: locations[indexPath.row].id)
         navigationController?.pushViewController(detailVC, animated: true)
     }

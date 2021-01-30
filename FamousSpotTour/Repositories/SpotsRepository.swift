@@ -10,7 +10,8 @@ import FirebaseFirestore
 
 struct SpotsRepository {
 
-  let name: String = "spots"
+//  let name: String = "spots"
+    let name: String = "spots_new"
   private var databaseStore: Firestore = Firestore.firestore()
 
   // Get All Spots data from Firebase.

@@ -8,7 +8,7 @@
 import UIKit
 
 class PictureTVC: UITableViewCell {
-
+    
     let container = UIView()
     
     let profile: UIImageView = {
@@ -21,12 +21,20 @@ class PictureTVC: UITableViewCell {
         return imageView
     }()
     
+    let changePictureButton: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .clear
+        btn.setTitle("📷", for: .normal)
+        return btn
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(container)
         addSubview(profile)
-
+        contentView.addSubview(changePictureButton)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +42,7 @@ class PictureTVC: UITableViewCell {
     }
 }
 
-class LabelTVC: UITableViewCell {
+class LabelTVC: UITableViewCell, UITextFieldDelegate {
     
     let name: UILabel = {
         let label = UILabel()
@@ -42,21 +50,57 @@ class LabelTVC: UITableViewCell {
         return label
     }()
     
+    let editButton: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .clear
+        btn.setTitle("✏️", for: .normal)
+        return btn
+    }()
+    
+    let nameT: UITextField = {
+        let textF = UITextField()
+        textF.text = "Username"
+        textF.borderStyle = .roundedRect
+        
+        return textF
+    }()
+    
+    let saveButton: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .clear
+        btn.setTitle("💾", for: .normal)
+        return btn
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        nameT.delegate = self
+        
         addSubview(name)
-
+        contentView.addSubview(editButton)
+        contentView.addSubview(nameT)
+        contentView.addSubview(saveButton)
+        nameT.isHidden = true
+        saveButton.isHidden = true
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        return updatedText.count <= 28
+    }
+    
 }
 
 class ProgressTVC: UITableViewCell {
-
+    
     var circleLayer = CAShapeLayer()
     var progressLayer = CAShapeLayer()
     
@@ -65,8 +109,6 @@ class ProgressTVC: UITableViewCell {
     var stackH = UIStackView()
     
     var stackV = UIStackView()
-    
-    
     
     let todo: UILabel = {
         let label = UILabel()
@@ -94,7 +136,7 @@ class ProgressTVC: UITableViewCell {
     
     let percent: UILabel = {
         let label = UILabel()
-        label.text = "70% achived"
+        label.text = "70% achieved"
         label.textColor = UIColor(hex: "#3EC6FF")
         label.font = .systemFont(ofSize: 12)
         return label
@@ -107,11 +149,7 @@ class ProgressTVC: UITableViewCell {
         
         stackV = VerticalStackView.init(arrangedSubviews: [stackH,percent], spacing: 5, alignment: .center)
         
-        
         addSubview(stackV)
-        
-        
-        
         addSubview(progressCircleView)
         
         createCircularPath()
@@ -137,7 +175,26 @@ class ProgressTVC: UITableViewCell {
     }
 }
 
-class SwitchTVC: UITableViewCell {
-
+class SegmentTVC: UITableViewCell {
     
+    let items = ["Like", "Achieved"]
+    var optionList = UISegmentedControl()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setEditing(true, animated: true)
+        
+        optionList = UISegmentedControl(items: items)
+        optionList.selectedSegmentIndex = 0
+    
+        optionList.layer.cornerRadius = 10.0  // Don't let background bleed
+        optionList.backgroundColor = UIColor(hex: "#C5EDFF")
+        
+        addSubview(optionList)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+        
+    }
 }

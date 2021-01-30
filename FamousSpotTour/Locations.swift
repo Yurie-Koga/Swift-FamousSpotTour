@@ -24,6 +24,7 @@ class Location : Object {
     @objc dynamic var like: Int = 0
     @objc dynamic var dislike: Int = 0
     @objc dynamic var picture : String = ""
+    var tagsId = List<Int>()
     
     @objc dynamic var createdAt: Date = Date()
     @objc dynamic var updateAt: Date = Date()
@@ -33,6 +34,7 @@ class Location : Object {
     }
     
     init(_ location: Dictionary<String, Any>) {
+        print(location)
         id = location["id"] as! Int
         name = location["name"] as! String
         desc = location["description"] as! String
@@ -44,6 +46,9 @@ class Location : Object {
         like = location["like"] as! Int
         dislike = location["dislike"] as! Int
         picture = location["picture"] as! String
+        for tag in location["tag_ids"] as! NSArray {
+            tagsId.append(tag as! Int)
+        }
         createdAt = (location["created_at"] as! Timestamp).dateValue()
         updateAt = (location["updated_at"] as! Timestamp).dateValue()
     }
