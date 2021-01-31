@@ -23,9 +23,8 @@ protocol UseCaseDelegate {
 
 struct SplashUseCase: UseCaseDelegate {
 
-    let realm = try! Realm()
+    let realm = RealmFactory.create()
     let store = StoreRepository()
-
 
     func run(completeion: @escaping () -> Void) {
         if self.has(LastUpdated.self) {

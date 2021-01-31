@@ -31,15 +31,15 @@ class TopViewController: UIViewController {
             imageName: "Circle Old",
             color: UIColor(hex: "#3EC6FF")!,
             note: "It provides a calm and relaxing place in Vancouver. The prices are a bit higher, but all places are relaxing spots. There are plenty of facilities and services for families to enjoy."),
-        UserType(id: 2,
+        UserType(id: 4,
             imageName: "Circle Family",
             color: UIColor(hex: "#4CAF50")!,
             note: "Although it is a large city, it is surrounded by the sea and mountains and is full of greenery. Vancouver is a city with so much to offer that you will never get bored no matter how many days or years you spend there."),
-        UserType(id: 3,
+        UserType(id: 2,
             imageName: "Circle Young",
             color: UIColor(hex: "#E91E63")!,
             note: "Here are some reasonably priced spots that even students can enjoy. You can enjoy the beach in summer and winter sports in winter."),
-        UserType(id: 4,
+        UserType(id: 3,
             imageName: "Circle Student",
             color: UIColor(hex: "#E040FB")!,
             note: "Although it is a large city, it is surrounded by the sea and mountains and is full of greenery. Here are some exciting spots that you may not have known existed."),
@@ -139,6 +139,7 @@ class TopViewController: UIViewController {
         
         let mainTBC = MainTabBarController()
         mainTBC.map.setupLocation(selectedTag)
+        mainTBC.list.locationId = selectedTag
         navigationController?.pushViewController(mainTBC, animated: true)
     }
 }

@@ -10,7 +10,7 @@ import RealmSwift
 import FirebaseFirestore
 
 enum Store: String, Codable {
-    case spots
+    case spots_new
     case categories
     case tags
     case last_updated
@@ -34,14 +34,14 @@ struct StoreRepository {
     }
 
     let stores: [(Store, Object)] = [
-        (.spots, Location()),
+        (.spots_new, Location()),
         (.categories, CategoryObject()),
         (.last_updated, LastUpdated()),
         (.sub_images, SubImage()),
         (.tags, Tag()),
     ]
 
-    let realm = try! Realm()
+    let realm = RealmFactory.create()
 
     private var databaseStore: Firestore = Firestore.firestore()
 
@@ -60,6 +60,11 @@ struct StoreRepository {
         }
     }
 
+    /// Get specific data from Firebase by collection name
+    /// - Parameters:
+    ///   - name: collection name.
+    ///   - id: specific collection id like 'id_1'.
+    ///   - completeion: after fetch run something.
     func select(from name: Store, where id: String,  completeion: @escaping ([String: Any]) -> Void) {
         databaseStore.collection(name.rawValue).document(id).getDocument{ (document, error) in
             if let error = error {
@@ -82,6 +87,10 @@ struct StoreRepository {
         }
     }
 
+    /// Get All data from Firebase by collection name.
+    /// - Parameters:
+    ///   - name: collection name.
+    ///   - completeion: after fetch run something.
     func findAll(_ name: String, completeion: @escaping ([QueryDocumentSnapshot]) -> Void) {
         databaseStore.collection(name).getDocuments{ (documents, error) in
             if let error = error {
@@ -92,6 +101,7 @@ struct StoreRepository {
         }
     }
 
+    /// save data that is fetching from Firebase.
     func fetchAndSave() {
         for (store, object) in self.stores {
             self.findAll(store.rawValue, completeion: { (collection) in
@@ -100,6 +110,10 @@ struct StoreRepository {
         }
     }
 
+    /// Insert into Realm.
+    /// - Parameters:
+    ///   - Entity: RealmSwiftObject.
+    ///   - collection: Data from Firebase.
     func insert(into Entity: Object, value collection: [QueryDocumentSnapshot]) {
         try! self.realm.write() {
             for document in collection {
@@ -124,6 +138,7 @@ struct StoreRepository {
         }
     }
 
+    /// Update local data only when Local data is older than server data.
     func updateIfNeed() {
         self.select(from: .last_updated, where: "id_1", completeion: {(document) in
             let serverDate = (document["last_updated_at"] as! Timestamp).dateValue()
@@ -136,6 +151,7 @@ struct StoreRepository {
         })
     }
 
+    /// Delete local data.
     func deleteAll() {
         try! realm.write {
             realm.deleteAll()
