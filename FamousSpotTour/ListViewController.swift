@@ -17,12 +17,16 @@ class ListViewController: UITableViewController {
     }
     var locations: [Location] = []
     let cellId = "spots"
+    
+    var notMyPage = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         super.tableView.register(ListViewCell.self, forCellReuseIdentifier: cellId)
         super.title = "Spot List"
-        self.setLocation()
+        if notMyPage {
+            self.setLocation()
+        }
     }
 
     private func setLocation() {
@@ -58,5 +62,4 @@ class ListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 285
     }
-
 }

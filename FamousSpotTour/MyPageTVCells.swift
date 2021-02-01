@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PictureTVC: UITableViewCell {
     
@@ -17,7 +18,8 @@ class PictureTVC: UITableViewCell {
         imageView.image = UIImage(systemName: "person")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        
+        imageView.layer.borderWidth = 5
+        imageView.layer.borderColor = UIColor.white.cgColor
         return imageView
     }()
     
@@ -142,10 +144,13 @@ class ProgressTVC: UITableViewCell {
         return label
     }()
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        
         stackH = HorizontalStackView.init(arrangedSubviews: [did,slash,todo], spacing: 5, alignment: .center)
+       
         
         stackV = VerticalStackView.init(arrangedSubviews: [stackH,percent], spacing: 5, alignment: .center)
         
@@ -157,17 +162,18 @@ class ProgressTVC: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+
         createCircularPath()
     }
     
     func createCircularPath() {
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = .round
-        circleLayer.lineWidth = 10.0
+        circleLayer.lineWidth = 5.0
         circleLayer.strokeColor = UIColor(hex: "#a9e1f9")?.cgColor
         progressLayer.fillColor = UIColor.clear.cgColor
         progressLayer.lineCap = .round
-        progressLayer.lineWidth = 10.0
+        progressLayer.lineWidth = 5.0
         progressLayer.strokeEnd = 0.7
         progressLayer.strokeColor = UIColor(hex: "#3EC6FF")?.cgColor
         progressCircleView.layer.addSublayer(circleLayer)
@@ -187,8 +193,8 @@ class SegmentTVC: UITableViewCell {
         optionList = UISegmentedControl(items: items)
         optionList.selectedSegmentIndex = 0
     
-        optionList.layer.cornerRadius = 10.0  // Don't let background bleed
-        optionList.backgroundColor = UIColor(hex: "#C5EDFF")
+        optionList.layer.cornerRadius = 20  // Don't let background bleed
+        optionList.backgroundColor = UIColor(hex: "#E8E8E8")
         
         addSubview(optionList)
     }
@@ -197,4 +203,23 @@ class SegmentTVC: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
         
     }
+}
+
+class SpotListTVC: UITableViewCell {
+    
+    var locList = ListViewController()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        locList.notMyPage = false
+        locList.viewDidLoad()
+        contentView.addSubview(locList.view)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

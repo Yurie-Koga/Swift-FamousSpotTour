@@ -186,6 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				3BF1117425B11392003BD6E7 /* AppDelegate.swift */,
+				3BF1117625B11392003BD6E7 /* SceneDelegate.swift */,
+				14B49FD525B7AF70005408CD /* MainTabBarController.swift */,
+				048BC50C25B65E2300C6E785 /* TopViewController.swift */,
 				3BF1117D25B11397003BD6E7 /* Assets.xcassets */,
 				04BAB30A25BFDBEF00059855 /* DetailsViewController.swift */,
 				3B7DF24925C3F8FE00615BC9 /* EntityWithRealmObject */,
@@ -496,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 637KJ8SYFF;
+				DEVELOPMENT_TEAM = 2RYK4AKN5Y;
 				INFOPLIST_FILE = FamousSpotTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,7 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 637KJ8SYFF;
+				DEVELOPMENT_TEAM = 2RYK4AKN5Y;
 				INFOPLIST_FILE = FamousSpotTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
