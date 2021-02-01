@@ -10,10 +10,11 @@ import RealmSwift
 import Firebase
 
 class ViewController: UIViewController {
-    
+
     static let share = ViewController()
     
     let spotsRepository: SpotsRepository = SpotsRepository()
+    let store: StoreRepository = StoreRepository(name: "tags")
     
     let spotsRepositoryNew: SpotsRepositoryNew = SpotsRepositoryNew()
     
@@ -22,8 +23,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         super.view.backgroundColor = .white
-        
-        
     }
     
     func fetchSpotFromRepository() {
@@ -62,6 +61,14 @@ class ViewController: UIViewController {
             }
         }
         task.resume()
+    }
+
+    func fetchTag() {
+        self.store.all(completeion: { (items) in
+            for item in items {
+                print(item.data())
+            }
+        })
     }
     
     

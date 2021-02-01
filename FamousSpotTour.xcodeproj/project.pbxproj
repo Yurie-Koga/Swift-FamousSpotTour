@@ -23,6 +23,17 @@
 		14F0D1A625BFB9F10034A30C /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0D1A525BFB9F10034A30C /* MyPageTableViewController.swift */; };
 		14F0D1A925BFBCEB0034A30C /* MyPageTVCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0D1A825BFBCEB0034A30C /* MyPageTVCells.swift */; };
 		21B735D6FC6D44565639BF4E /* Pods_FamousSpotTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA4F1E7CBDF4B7A68F7D1AB /* Pods_FamousSpotTour.framework */; };
+		3B42463625C4C29300C84772 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B42463525C4C29300C84772 /* Tag.swift */; };
+		3B42463D25C4DA0F00C84772 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B42463C25C4DA0F00C84772 /* Category.swift */; };
+		3B42464025C4DB6E00C84772 /* LastUpdated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B42463F25C4DB6E00C84772 /* LastUpdated.swift */; };
+		3B42464325C4DBC900C84772 /* SubImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B42464225C4DBC900C84772 /* SubImage.swift */; };
+		3B77ED4D25C63F6500F4CBA3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77ED4C25C63F6500F4CBA3 /* ListViewController.swift */; };
+		3B77ED5125C6414200F4CBA3 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77ED5025C6414200F4CBA3 /* ListViewCell.swift */; };
+		3B77ED5525C67FD500F4CBA3 /* RealmUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77ED5425C67FD500F4CBA3 /* RealmUsable.swift */; };
+		3B7DF23E25C39EAA00615BC9 /* StoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7DF23D25C39EAA00615BC9 /* StoreRepository.swift */; };
+		3B7DF24125C3C26000615BC9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7DF24025C3C26000615BC9 /* Splash.storyboard */; };
+		3B7DF24425C3C29B00615BC9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7DF24325C3C29B00615BC9 /* SplashViewController.swift */; };
+		3B7DF24D25C3FA9100615BC9 /* SplashUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7DF24C25C3FA9100615BC9 /* SplashUseCase.swift */; };
 		3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */; };
 		3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */; };
 		3BF1117525B11392003BD6E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1117425B11392003BD6E7 /* AppDelegate.swift */; };
@@ -48,6 +59,17 @@
 		14F0D19925BB926E0034A30C /* SpotTabHorizontalCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTabHorizontalCVCell.swift; sourceTree = "<group>"; };
 		14F0D1A525BFB9F10034A30C /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
 		14F0D1A825BFBCEB0034A30C /* MyPageTVCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVCells.swift; sourceTree = "<group>"; };
+		3B42463525C4C29300C84772 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = FamousSpotTour/Splash/Tag.swift; sourceTree = SOURCE_ROOT; };
+		3B42463C25C4DA0F00C84772 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3B42463F25C4DB6E00C84772 /* LastUpdated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUpdated.swift; sourceTree = "<group>"; };
+		3B42464225C4DBC900C84772 /* SubImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubImage.swift; sourceTree = "<group>"; };
+		3B77ED4C25C63F6500F4CBA3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		3B77ED5025C6414200F4CBA3 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		3B77ED5425C67FD500F4CBA3 /* RealmUsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUsable.swift; sourceTree = "<group>"; };
+		3B7DF23D25C39EAA00615BC9 /* StoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StoreRepository.swift; path = FamousSpotTour/StoreRepository.swift; sourceTree = SOURCE_ROOT; };
+		3B7DF24025C3C26000615BC9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		3B7DF24325C3C29B00615BC9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		3B7DF24C25C3FA9100615BC9 /* SplashUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUseCase.swift; sourceTree = "<group>"; };
 		3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsRepository.swift; sourceTree = "<group>"; };
 		3BF1117125B11392003BD6E7 /* FamousSpotTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamousSpotTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,9 +125,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3B77ED4B25C63F0E00F4CBA3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				3B77ED4C25C63F6500F4CBA3 /* ListViewController.swift */,
+				3B77ED5025C6414200F4CBA3 /* ListViewCell.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		3B7DF24925C3F8FE00615BC9 /* EntityWithRealmObject */ = {
+			isa = PBXGroup;
+			children = (
+				3B42463525C4C29300C84772 /* Tag.swift */,
+				3B42464225C4DBC900C84772 /* SubImage.swift */,
+				3B42463F25C4DB6E00C84772 /* LastUpdated.swift */,
+				3B42463C25C4DA0F00C84772 /* Category.swift */,
+				3B77ED5425C67FD500F4CBA3 /* RealmUsable.swift */,
+			);
+			path = EntityWithRealmObject;
+			sourceTree = "<group>";
+		};
+		3B7DF24A25C3F91C00615BC9 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				3B7DF24325C3C29B00615BC9 /* SplashViewController.swift */,
+				3B7DF24C25C3FA9100615BC9 /* SplashUseCase.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		3BA1FC2425B773AE00EEA851 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				3B7DF23D25C39EAA00615BC9 /* StoreRepository.swift */,
 				3BA1FC2525B773CE00EEA851 /* SpotsRepository.swift */,
 			);
 			path = Repositories;
@@ -132,25 +185,32 @@
 		3BF1117325B11392003BD6E7 /* FamousSpotTour */ = {
 			isa = PBXGroup;
 			children = (
-				3BA1FC2425B773AE00EEA851 /* Repositories */,
-				048BC50B25B65DDE00C6E785 /* Utils */,
 				3BF1117425B11392003BD6E7 /* AppDelegate.swift */,
 				3BF1117625B11392003BD6E7 /* SceneDelegate.swift */,
 				14B49FD525B7AF70005408CD /* MainTabBarController.swift */,
 				048BC50C25B65E2300C6E785 /* TopViewController.swift */,
+				3BF1117D25B11397003BD6E7 /* Assets.xcassets */,
+				04BAB30A25BFDBEF00059855 /* DetailsViewController.swift */,
+				3B7DF24925C3F8FE00615BC9 /* EntityWithRealmObject */,
+				3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */,
+				3BF1118225B11397003BD6E7 /* Info.plist */,
+				3BF1117F25B11397003BD6E7 /* LaunchScreen.storyboard */,
+				3B77ED4B25C63F0E00F4CBA3 /* List */,
 				14B49FD125B7ABF4005408CD /* Locations.swift */,
+				14B49FD525B7AF70005408CD /* MainTabBarController.swift */,
 				14B49FD025B7ABF4005408CD /* MapViewController.swift */,
 				14F0D1A525BFB9F10034A30C /* MyPageTableViewController.swift */,
 				14F0D1A825BFBCEB0034A30C /* MyPageTVCells.swift */,
-				3BF1117825B11392003BD6E7 /* ViewController.swift */,
+				3BA1FC2425B773AE00EEA851 /* Repositories */,
+				3BF1117625B11392003BD6E7 /* SceneDelegate.swift */,
+				3B7DF24A25C3F91C00615BC9 /* Splash */,
+				3B7DF24025C3C26000615BC9 /* Splash.storyboard */,
 				14F0D19925BB926E0034A30C /* SpotTabHorizontalCVCell.swift */,
-				04BAB30A25BFDBEF00059855 /* DetailsViewController.swift */,
-				04BAB30D25BFDC2300059855 /* UserData.swift */,
 				04BAB31025BFDC5200059855 /* SubPictureCollectionViewCell.swift */,
-				3BF1117D25B11397003BD6E7 /* Assets.xcassets */,
-				3BF1117F25B11397003BD6E7 /* LaunchScreen.storyboard */,
-				3BF1118225B11397003BD6E7 /* Info.plist */,
-				3BA1FBF725B67C6900EEA851 /* GoogleService-Info.plist */,
+				048BC50C25B65E2300C6E785 /* TopViewController.swift */,
+				04BAB30D25BFDC2300059855 /* UserData.swift */,
+				048BC50B25B65DDE00C6E785 /* Utils */,
+				3BF1117825B11392003BD6E7 /* ViewController.swift */,
 			);
 			path = FamousSpotTour;
 			sourceTree = "<group>";
@@ -217,6 +277,7 @@
 				3BF1118125B11397003BD6E7 /* LaunchScreen.storyboard in Resources */,
 				3BF1117E25B11397003BD6E7 /* Assets.xcassets in Resources */,
 				3BA1FBF825B67C6900EEA851 /* GoogleService-Info.plist in Resources */,
+				3B7DF24125C3C26000615BC9 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +335,10 @@
 				14B49FD625B7AF70005408CD /* MainTabBarController.swift in Sources */,
 				3BA1FC2625B773CE00EEA851 /* SpotsRepository.swift in Sources */,
 				14F0D1A625BFB9F10034A30C /* MyPageTableViewController.swift in Sources */,
+				3B77ED4D25C63F6500F4CBA3 /* ListViewController.swift in Sources */,
 				14B49FD225B7ABF4005408CD /* MapViewController.swift in Sources */,
+				3B42464325C4DBC900C84772 /* SubImage.swift in Sources */,
+				3B42463625C4C29300C84772 /* Tag.swift in Sources */,
 				04BAB30825BFD7A400059855 /* PaddingLabel.swift in Sources */,
 				048BC50925B65DD900C6E785 /* VerticalStackView.swift in Sources */,
 				3BF1117525B11392003BD6E7 /* AppDelegate.swift in Sources */,
@@ -282,12 +346,19 @@
 				048BC50725B65DD900C6E785 /* HorizontalStackView.swift in Sources */,
 				04BAB30B25BFDBEF00059855 /* DetailsViewController.swift in Sources */,
 				048BC50825B65DD900C6E785 /* UIView+ConstraintLayout.swift in Sources */,
+				3B42463D25C4DA0F00C84772 /* Category.swift in Sources */,
 				04BAB30E25BFDC2300059855 /* UserData.swift in Sources */,
 				04BAB31125BFDC5200059855 /* SubPictureCollectionViewCell.swift in Sources */,
 				14B49FD325B7ABF4005408CD /* Locations.swift in Sources */,
+				3B77ED5125C6414200F4CBA3 /* ListViewCell.swift in Sources */,
+				3B42464025C4DB6E00C84772 /* LastUpdated.swift in Sources */,
+				3B77ED5525C67FD500F4CBA3 /* RealmUsable.swift in Sources */,
 				144D2ED625B95318000D7C63 /* UIColor+HexaColor.swift in Sources */,
 				14F0D1A925BFBCEB0034A30C /* MyPageTVCells.swift in Sources */,
 				048BC50D25B65E2300C6E785 /* TopViewController.swift in Sources */,
+				3B7DF24D25C3FA9100615BC9 /* SplashUseCase.swift in Sources */,
+				3B7DF23E25C39EAA00615BC9 /* StoreRepository.swift in Sources */,
+				3B7DF24425C3C29B00615BC9 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
