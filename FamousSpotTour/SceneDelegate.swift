@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let scene = (scene as? UIWindowScene) else { return }
     ViewController.share.fetchSpotFromRepository()
     window = UIWindow(windowScene: scene)
-    window?.rootViewController = UINavigationController(rootViewController: TopViewController())
+    window?.rootViewController = UIStoryboard(name: "Splash", bundle: nil).instantiateInitialViewController()
     window?.makeKeyAndVisible()
   }
 
