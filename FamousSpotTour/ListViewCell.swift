@@ -16,7 +16,7 @@ class ListViewCell: UITableViewCell {
         view.axis = .vertical
         view.alignment = .center
         view.distribution = .equalSpacing
-        view.spacing = 20
+        view.spacing = 10
         return view
     }()
 
@@ -26,6 +26,7 @@ class ListViewCell: UITableViewCell {
         view.axis = .horizontal
         view.alignment = .center
         view.distribution = .equalSpacing
+        view.spacing = 10
         return view
     }()
 
@@ -44,6 +45,7 @@ class ListViewCell: UITableViewCell {
         view.axis = .vertical
         view.alignment = .center
         view.distribution = .equalSpacing
+        view.spacing = 10
         return view
     }()
 
@@ -127,8 +129,8 @@ class ListViewCell: UITableViewCell {
         self.picture.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(self.above)
             make.leading.equalTo(self.above)
-            make.width.equalToSuperview().multipliedBy(0.7)
-            make.height.equalTo(190)
+//            make.width.equalToSuperview().multipliedBy(0.7)
+            make.height.equalTo(contentView.bounds.width * 0.6)
         }
         self.above.addArrangedSubview(self.rightImageBlock)
         self.rightImageBlock.snp.makeConstraints { (make) -> Void in
@@ -138,10 +140,10 @@ class ListViewCell: UITableViewCell {
         self.rightImageBlock.addArrangedSubview(self.image1)
         self.rightImageBlock.addArrangedSubview(self.image2)
         self.image1.snp.makeConstraints { (make) -> Void in
-            make.width.height.equalTo(92)
+            make.width.height.equalTo(contentView.bounds.width * 0.3)
         }
         self.image2.snp.makeConstraints { (make) -> Void in
-            make.width.height.equalTo(92)
+            make.width.height.equalTo(contentView.bounds.width * 0.3)
         }
     }
 

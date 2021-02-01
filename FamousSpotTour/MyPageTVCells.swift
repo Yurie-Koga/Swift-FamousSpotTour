@@ -193,8 +193,7 @@ class SegmentTVC: UITableViewCell {
         optionList = UISegmentedControl(items: items)
         optionList.selectedSegmentIndex = 0
     
-        optionList.layer.cornerRadius = 100  // Don't let background bleed
-        optionList.layer.cornerCurve = .circular
+        optionList.layer.cornerRadius = 20  // Don't let background bleed
         optionList.backgroundColor = UIColor(hex: "#E8E8E8")
         
         addSubview(optionList)
@@ -204,4 +203,23 @@ class SegmentTVC: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
         
     }
+}
+
+class SpotListTVC: UITableViewCell {
+    
+    var locList = ListViewController()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        locList.notMyPage = false
+        locList.viewDidLoad()
+        contentView.addSubview(locList.view)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

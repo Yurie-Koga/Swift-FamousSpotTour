@@ -42,7 +42,7 @@ class MainTabBarController: UITabBarController {
             return v
         default:
             let v = UIViewController()
-            v.tabBarItem = UITabBarItem(title: "List", image: UIImage(systemName: "list.dash")! , selectedImage: nil)
+            v.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(systemName: "gearshape")! , selectedImage: nil)
             return v
         }
         

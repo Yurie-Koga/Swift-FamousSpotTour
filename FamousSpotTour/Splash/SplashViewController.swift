@@ -23,6 +23,8 @@ class SplashViewController: UIViewController {
         indicator.color = UIColor(hex: "#3EC6FF")
         return indicator
     }()
+    
+    let stack = VerticalStackView(arrangedSubviews: [], spacing: 10, alignment: .center, distribution: .equalCentering)
 
     let nextViewController: UINavigationController = {
         let navigationController = UINavigationController(rootViewController: TopViewController())
@@ -48,7 +50,7 @@ class SplashViewController: UIViewController {
     private func setSplashImage() {
         super.view.addSubview(self.splash)
         self.splash.snp.makeConstraints { (make) -> Void in
-            make.width.height.equalTo(200)
+            make.width.height.equalTo(super.view.bounds.height * 0.25)
             make.center.equalTo(super.view)
         }
     }
