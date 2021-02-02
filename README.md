@@ -29,16 +29,11 @@ swift: 5.3.2
 Screen Shots
 ---
 
-<ul style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-<li style="width:22%"><img src="./img/ScreenShot01.png" alt="Screen Shot" /></li>
-<li style="width:22%"><img src="./img/ScreenShot02.png" alt="Screen Shot" /></li>
-<li style="width:22%"><img src="./img/ScreenShot03.png" alt="Screen Shot" /></li>
-<li style="width:22%"><img src="./img/ScreenShot04.png" alt="Screen Shot" /></li>
-<li style="width:22%"><img src="./img/ScreenShot05.png" alt="Screen Shot" /></li>
-<li style="width:22%"><img src="./img/ScreenShot06.png" alt="Screen Shot" /></li>
-<li style="width:22%"><img src="./img/ScreenShot07.png" alt="Screen Shot" /></li>
-<li style="width:22%"><img src="./img/ScreenShot08.png" alt="Screen Shot" /></li>
-</ul>
+| | | | |
+|-|-|-|-|
+|![ss](./img/ScreenShot01.png)|![ss](./img/ScreenShot02.png)|![ss](./img/ScreenShot03.png)|![ss](./img/ScreenShot04.png)|
+|![ss](./img/ScreenShot05.png)|![ss](./img/ScreenShot06.png)|![ss](./img/ScreenShot07.png)|![ss](./img/ScreenShot08.png)|
+
 
 Features
 ---
