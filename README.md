@@ -26,11 +26,26 @@ Dependency
 swift: 5.3.2
 ```
 
-Usage
+Screen Shots
 ---
+
+<ul style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+<li style="width:22%"><img src="./img/ScreenShot01.png" alt="Screen Shot" /></li>
+<li style="width:22%"><img src="./img/ScreenShot02.png" alt="Screen Shot" /></li>
+<li style="width:22%"><img src="./img/ScreenShot03.png" alt="Screen Shot" /></li>
+<li style="width:22%"><img src="./img/ScreenShot04.png" alt="Screen Shot" /></li>
+<li style="width:22%"><img src="./img/ScreenShot05.png" alt="Screen Shot" /></li>
+<li style="width:22%"><img src="./img/ScreenShot06.png" alt="Screen Shot" /></li>
+<li style="width:22%"><img src="./img/ScreenShot07.png" alt="Screen Shot" /></li>
+<li style="width:22%"><img src="./img/ScreenShot08.png" alt="Screen Shot" /></li>
+</ul>
 
 Features
 ---
+
+1. Find famous spot in Vancouver.
+1. Direction how to go
+1. Know Spot information.
 
 Installation
 ---
