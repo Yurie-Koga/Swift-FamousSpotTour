@@ -1,5 +1,7 @@
 Famus Sport Tour
 ===
+[Original Repo](https://github.com/TakayasuNasu/FamousSpotTour)
+
 
 Whtat's Famus Sport Tour
 ---
@@ -59,9 +61,9 @@ Reference
 Authors
 ---
 
-- Adriano Gaiotto de Oliveira
+- [Adriano Gaiotto de Oliveira](https://github.com/sangomax)
+- [Takayasu Nasu](https://github.com/TakayasuNasu)
 - Yurie Koga
-- Takayasu Nasu
 
 License
 ---
